@@ -1,0 +1,400 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(180deg, #f7f7f7 0%, #eef1ff 100%);
+    color: #1d2235;
+    line-height: 1.5;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* Page header */
+header {
+    background: linear-gradient(135deg, #27187e 0%, #3b2ca4 100%);
+    color: #ffffff;
+    padding: 28px 20px 30px;
+    box-shadow: 0 12px 24px rgba(39, 24, 126, 0.18);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    letter-spacing: 0.06em;
+    font-weight: 800;
+}
+
+.date-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 0.96rem;
+    opacity: 0.96;
+}
+
+.date-time p {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px 14px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+main {
+    width: min(1180px, 92%);
+    margin: 32px auto 48px;
+}
+
+/* Search and filter controls */
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px solid rgba(39, 24, 126, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(39, 24, 126, 0.12);
+}
+
+.search-section input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid rgba(39, 24, 126, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background: #fff;
+    color: #1d2235;
+}
+
+.search-section input:focus,
+.search-section button:focus,
+.filter-btn:focus,
+.sort-section select:focus,
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid rgba(39, 24, 126, 0.22);
+    outline-offset: 2px;
+}
+
+.search-section button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #27187e 0%, #3e2db6 100%);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.search-section button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(39, 24, 126, 0.2);
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.filter-btn {
+    padding: 11px 18px;
+    border: 1px solid rgba(39, 24, 126, 0.18);
+    background: #ffffff;
+    color: #1d2235;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #27187e;
+    color: #fff;
+    border-color: #27187e;
+    box-shadow: 0 10px 22px rgba(39, 24, 126, 0.18);
+}
+
+#status {
+    margin: 14px 0 18px;
+    font-weight: 700;
+    color: #27187e;
+}
+
+/* Dashboard statistics */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 20px 0 28px;
+}
+
+.stat-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f5f1ff 100%);
+    border: 1px solid rgba(39, 24, 126, 0.12);
+    border-radius: 18px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 12px 25px rgba(39, 24, 126, 0.08);
+}
+
+.stat-card h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #5e647d;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 800;
+    color: #27187e;
+}
+
+.highest-section {
+    background: #ffffff;
+    padding: 22px 20px;
+    margin-bottom: 26px;
+    border-radius: 18px;
+    border: 1px solid rgba(39, 24, 126, 0.12);
+    box-shadow: 0 18px 40px rgba(39, 24, 126, 0.12);
+}
+
+.highest-section h2 {
+    margin-bottom: 12px;
+    color: #27187e;
+}
+
+#highestEmployee {
+    color: #5e647d;
+    font-weight: 600;
+}
+
+/* Sorting and employee list */
+.sort-section {
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sort-section label {
+    font-weight: 700;
+    color: #1d2235;
+}
+
+.sort-section select {
+    padding: 10px 14px;
+    border: 1px solid rgba(39, 24, 126, 0.18);
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1d2235;
+    min-width: 150px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    color: #27187e;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.employee-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.employee-card {
+    background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);
+    border: 1px solid rgba(39, 24, 126, 0.12);
+    border-radius: 20px;
+    padding: 22px 18px;
+    box-shadow: 0 14px 28px rgba(39, 24, 126, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.employee-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(39, 24, 126, 0.12);
+}
+
+.employee-card img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 16px;
+    border: 4px solid rgba(39, 24, 126, 0.12);
+    object-fit: cover;
+}
+
+.employee-card h3 {
+    text-align: center;
+    margin-bottom: 14px;
+    color: #27187e;
+    font-size: 1.2rem;
+}
+
+.employee-card p {
+    margin: 8px 0;
+    color: #1d2235;
+}
+
+.department {
+    display: inline-block;
+    background: rgba(39, 24, 126, 0.12);
+    color: #27187e;
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/* Employee actions */
+.delete-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 10px 12px;
+    border: none;
+    background: linear-gradient(135deg, #dc3545 0%, #d9465e 100%);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.delete-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+}
+
+/* Add employee form */
+.add-section {
+    background: linear-gradient(180deg, #ffffff 0%, #f7f4ff 100%);
+    margin-top: 40px;
+    padding: 30px 24px;
+    border-radius: 22px;
+    border: 1px solid rgba(39, 24, 126, 0.12);
+    box-shadow: 0 18px 40px rgba(39, 24, 126, 0.12);
+}
+
+.add-section h2 {
+    text-align: center;
+    margin-bottom: 26px;
+    color: #27187e;
+    font-size: clamp(1.5rem, 2vw, 2.1rem);
+}
+
+#employeeForm {
+    max-width: 740px;
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    color: #1d2235;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(39, 24, 126, 0.18);
+    background: #ffffff;
+    color: #1d2235;
+}
+
+.form-group small {
+    display: block;
+    color: #dc3545;
+    min-height: 18px;
+    font-size: 0.82rem;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    background: linear-gradient(135deg, #27187e 0%, #3d2cb6 100%);
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(39, 24, 126, 0.18);
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    .employee-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .employee-container,
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .date-time {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filter-section {
+        gap: 8px;
+    }
+
+    .add-section {
+        padding: 20px 16px;
+    }
+}
