@@ -23,7 +23,7 @@ const sortSelect = document.getElementById("sortSelect");
 const displayDateTime = () => {
     const now = new Date();
     const year = now.getFullYear();
-    const month = now.getMonth() + 1;
+    const month = now.toLocaleString("en-US", { month: "long" });
     const date = now.getDate();
     let hours = now.getHours();
     const minutes = now.getMinutes();
@@ -38,7 +38,7 @@ const displayDateTime = () => {
 
     const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
 
-    document.getElementById("today").innerHTML = `Today: ${date}/${month}/${year}`;
+    document.getElementById("today").innerHTML = `Today: ${date} ${month} ${year}`;
     document.getElementById("time").innerHTML = `Time: ${hours}:${formattedMinutes} ${ampm}`;
 };
 
